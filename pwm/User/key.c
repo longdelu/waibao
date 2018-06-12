@@ -36,7 +36,9 @@ void EXTI0_IRQHandler(void)
     delay_ms(10);//消抖
 	
     if(INT1==0)          //INT1按键（PE0管脚按下）
-    {                                                            
+    {          
+
+        
 
     }
     

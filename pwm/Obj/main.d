@@ -24,4 +24,5 @@
 ..\obj\main.o: delay.h
 ..\obj\main.o: led.h
 ..\obj\main.o: pwm.h
+..\obj\main.o: wave.h
 ..\obj\main.o: key.h

@@ -2,7 +2,7 @@ Dependencies for Project 'Ä£°å', Target 'Target 1': (DO NOT MODIFY !)
 F (..\Startup\core_cm3.c)(0x5B1CD309)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\Lib\inc -I ..\User -I ..\Startup -I ..\Usart-IE:\waibao\pwm\User\RTE-IE:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-IE:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\core_cm3.o --omf_browse ..\obj\core_cm3.crf --depend ..\obj\core_cm3.d)
 I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574E3E26)
 F (..\Startup\startup_stm32f10x_hd.s)(0x5B1CD308)(--cpu Cortex-M3 -g --apcs=interwork -IE:\waibao\pwm\User\RTE-IE:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-IE:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include--pd "__UVISION_VERSION SETA 521" --pd "_RTE_ SETA 1" --pd "STM32F10X_HD SETA 1"--list ..\startup_stm32f10x_hd.lst --xref -o ..\obj\startup_stm32f10x_hd.o --depend ..\obj\startup_stm32f10x_hd.d)
-F (.\main.c)(0x5B1CE2C8)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\Lib\inc -I ..\User -I ..\Startup -I ..\Usart-IE:\waibao\pwm\User\RTE-IE:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-IE:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+F (.\main.c)(0x5B1FF9CE)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\Lib\inc -I ..\User -I ..\Startup -I ..\Usart-IE:\waibao\pwm\User\RTE-IE:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-IE:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
 I (stm32f10x.h)(0x5B1CD308)
 I (..\Startup\core_cm3.h)(0x5B1CD308)
 I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574E3E26)
@@ -28,6 +28,7 @@ I (gpio.h)(0x5B1CD308)
 I (delay.h)(0x5B1CD308)
 I (led.h)(0x5B1CD628)
 I (pwm.h)(0x5B1CDAA2)
+I (wave.h)(0x5B1FF99C)
 I (key.h)(0x53B103AD)
 F (.\stm32f10x_it.c)(0x5B1CD308)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\Lib\inc -I ..\User -I ..\Startup -I ..\Usart-IE:\waibao\pwm\User\RTE-IE:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-IE:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f10x_it.o --omf_browse ..\obj\stm32f10x_it.crf --depend ..\obj\stm32f10x_it.d)
 I (stm32f10x_it.h)(0x5B1CD308)
@@ -185,7 +186,7 @@ I (..\Lib\inc\misc.h)(0x5B1CD30A)
 I (extigroup.h)(0x5B1CD308)
 I (delay.h)(0x5B1CD308)
 I (pwm.h)(0x5B1CDAA2)
-F (.\key.c)(0x5B1CD628)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\Lib\inc -I ..\User -I ..\Startup -I ..\Usart-IE:\waibao\pwm\User\RTE-IE:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-IE:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\key.o --omf_browse ..\obj\key.crf --depend ..\obj\key.d)
+F (.\key.c)(0x5B1FED95)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\Lib\inc -I ..\User -I ..\Startup -I ..\Usart-IE:\waibao\pwm\User\RTE-IE:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-IE:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\key.o --omf_browse ..\obj\key.crf --depend ..\obj\key.d)
 I (..\Lib\inc\stm32f10x_gpio.h)(0x5B1CD309)
 I (..\User\stm32f10x.h)(0x5B1CD308)
 I (..\Startup\core_cm3.h)(0x5B1CD308)
@@ -206,7 +207,7 @@ I (..\Lib\inc\misc.h)(0x5B1CD30A)
 I (gpio.h)(0x5B1CD308)
 I (delay.h)(0x5B1CD308)
 I (extigroup.h)(0x5B1CD308)
-F (.\wave.c)(0x5B1EA920)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\Lib\inc -I ..\User -I ..\Startup -I ..\Usart-IE:\waibao\pwm\User\RTE-IE:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-IE:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\wave.o --omf_browse ..\obj\wave.crf --depend ..\obj\wave.d)
+F (.\wave.c)(0x5B1FF9B4)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\Lib\inc -I ..\User -I ..\Startup -I ..\Usart-IE:\waibao\pwm\User\RTE-IE:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-IE:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\wave.o --omf_browse ..\obj\wave.crf --depend ..\obj\wave.d)
 I (..\Lib\inc\stm32f10x_tim.h)(0x5B1CD309)
 I (..\User\stm32f10x.h)(0x5B1CD308)
 I (..\Startup\core_cm3.h)(0x5B1CD308)

@@ -21,3 +21,4 @@
 ..\obj\key.o: gpio.h
 ..\obj\key.o: delay.h
 ..\obj\key.o: extigroup.h
+..\obj\key.o: wave.h

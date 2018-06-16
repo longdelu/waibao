@@ -1,8 +1,11 @@
 #ifndef __led_H
 #define __led_H
 
-// PG14, 代表LED2;
-#define LED2 PGout(14)           
+// PE5, 代表LED1;
+#define LED1 PEout(5)     
+
+// PB5, 代表LED0;
+#define LED0 PBout(5)    
 
 //LED初始化
 void LED_Init(void);

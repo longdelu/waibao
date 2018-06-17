@@ -47,8 +47,12 @@ void EXTI2_IRQHandler(void)
     {          
 
        TIM_Cmd(TIM3, ENABLE);                               //使能TIM3，输出PWM波
-       DAC1_WAVE_Disable();                                 //禁能DAC输出三角波  
-       TIM_DMACmd(TIM4,TIM_DMA_Update,DISABLE);             //禁能定时器4更新事件触发DMA，不输出正玄波       
+               
+       DMA_Cmd(DMA1_Channel7, DISABLE);                     //禁能DMA通道 
+       DMA_SetCurrDataCounter(DMA1_Channel7,0);             //DMA通道的DMA缓存的大小清0      
+       TIM_DMACmd(TIM4,TIM_DMA_Update,DISABLE);             //禁能定时器4更新事件触发DMA，不输出正玄波   
+        
+       DAC1_WAVE_Disable();                                 //禁能DAC输出三角波          
 
     }
     
@@ -63,12 +67,16 @@ void EXTI3_IRQHandler(void)
     delay_ms(10);//消抖
 	
     if(KEY1==0)                                             //KEY1按键（PE3管脚按下）
-    {          
+    {  
+        
+       DMA_Cmd(DMA1_Channel7, DISABLE);                     //禁能DMA通道 
+       DMA_SetCurrDataCounter(DMA1_Channel7,0);             //DMA通道的DMA缓存的大小清0      
+       TIM_DMACmd(TIM4,TIM_DMA_Update,DISABLE);             //禁能定时器4更新事件触发DMA，不输出正玄波   
+        
+       TIM_Cmd(TIM3, DISABLE);                              //禁能TIM3，不输出PWM波  
+        
        DAC1_WAVE_Enable();                                  //使能DAC输出三角波 
-
-       TIM_Cmd(TIM3, DISABLE);                              //禁能TIM3，不输出PWM波 
-       TIM_DMACmd(TIM4,TIM_DMA_Update,DISABLE);             //禁能定时器4更新事件触发DMA，不输出正玄波           
-
+              
     }
     
     EXTI_ClearITPendingBit(EXTI_Line3);                     //清除LINE3上的中断标志位 
@@ -86,6 +94,11 @@ void EXTI4_IRQHandler(void)
 
         DAC1_WAVE_Disable();                                 //禁能DAC输出三角波
         TIM_Cmd(TIM3, DISABLE);                              //禁能TIM3，不输出PWM波 
+        
+        DMA_Cmd(DMA1_Channel7, DISABLE);                     //禁能DMA通道
+        DMA_SetCurrDataCounter(DMA1_Channel7,N);             //重新DMA通道的DMA缓存的大小          
+        DMA_Cmd(DMA1_Channel7, ENABLE);                      //使能DMA通道
+        
         TIM_DMACmd(TIM4,TIM_DMA_Update,ENABLE);              //使能定时器4更新事件触发DMA，输出正玄波          
 
     }

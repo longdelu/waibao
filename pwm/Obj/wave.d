@@ -22,3 +22,4 @@
 ..\obj\wave.o: delay.h
 ..\obj\wave.o: pwm.h
 ..\obj\wave.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+..\obj\wave.o: wave.h

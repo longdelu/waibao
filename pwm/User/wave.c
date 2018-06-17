@@ -5,14 +5,10 @@
 #include "delay.h"
 #include "pwm.h"
 #include "math.h"
+#include "wave.h"
 
 
-#define  Vref       3.3	
-#define  Um         (Vref/2)
-#define  PI         3.1415926
-#define  N          256
-
-
+//正玄波数据表
 __align(4)  static u16 sinwave_val[N];
 
 //DAC1 通道ch使能   
@@ -33,15 +29,18 @@ void DAC1_Disable(u8 ch)
 //使能生成三角波
 void DAC1_WAVE_Enable(void)
 {
-      
+    DAC->DHR12R1=0; 
+    DAC->DOR1=0;     
     DAC->CR |= (2<<6);      
 }
 
 //禁能生成三角波
 void DAC1_WAVE_Disable(void)
 {
-      
-    DAC->CR &= ~(3<<6);      
+    DAC->DHR12R1=0;
+    DAC->DOR1=0;      
+    DAC->CR &= ~(3<<6);
+           
 }
 
 
@@ -88,11 +87,11 @@ void SinWave_DMA_Init (void)
 	DMA_InitStructure.DMA_M2M = DMA_M2M_Disable;                                          //关闭内存到内存模式
 	DMA_InitStructure.DMA_Mode = DMA_Mode_Circular;                                       //循环发送模式 
     	
-    DMA_InitStructure.DMA_PeripheralBaseAddr = (uint32_t)(&(DAC->DHR12R1));                      //外设地址为DAC通道1数据寄存器
-    DMA_InitStructure.DMA_MemoryBaseAddr = (uint32_t)sinwave_val;                                //内存地址为输出波形数据数组
-    DMA_Init(DMA1_Channel7, &DMA_InitStructure);                                                 //初始化DMA通道
-    DMA_SetCurrDataCounter(DMA1_Channel7,N);                                                     //DMA通道的DMA缓存的大小
-    DMA_Cmd(DMA1_Channel7, ENABLE);                                                              //使能DMA通道7         
+    DMA_InitStructure.DMA_PeripheralBaseAddr = (uint32_t)(&(DAC->DHR12R1));               //外设地址为DAC通道1数据寄存器
+    DMA_InitStructure.DMA_MemoryBaseAddr = (uint32_t)sinwave_val;                         //内存地址为输出波形数据数组
+    DMA_Init(DMA1_Channel7, &DMA_InitStructure);                                          //初始化DMA通道
+    DMA_SetCurrDataCounter(DMA1_Channel7,N);                                              //DMA通道的DMA缓存的大小
+    DMA_Cmd(DMA1_Channel7, ENABLE);                                                       //使能DMA通道         
       
 }
 
@@ -117,11 +116,12 @@ void TIM4_Init(u16 arr,u16 psc)
      
      TIM_SelectOutputTrigger(TIM4, TIM_TRGOSource_Update);         //选择更新事件作为触发输出（TRGO）
     
-
+     TIM_DMACmd(TIM4,TIM_DMA_Update,ENABLE);                       //使能定时器4更新事件触发DMA，输出正玄波 
+    
      TIM_Cmd(TIM4, ENABLE);                                        //使能TIM4
 }
 
-//正弦波初始化
+//正弦波表值初始化
 u16 SinWave_Val_Init(void)
 {	  
     u16 i;
@@ -132,8 +132,7 @@ u16 SinWave_Val_Init(void)
 		sinwave_val[i] = (u16)((Um*sin(( 1.0*i/(N-1))*2*PI)+Um)*4095/3.3);
 	}	
     
-    return 0;
-					
+    return 0;					
 }
 
 //设置通道1输出电压
@@ -143,5 +142,5 @@ void Dac1_Set_Vol(u16 vol)
 	float temp=vol;
 	temp/=1000;
 	temp=temp*4096/3.3;
-	DAC_SetChannel1Data(DAC_Align_12b_R,temp);//12位右对齐数据格式设置DAC值
+	DAC_SetChannel1Data(DAC_Align_12b_R,temp);                    //12位右对齐数据格式设置DAC值
 }

@@ -186,7 +186,7 @@ I (..\Lib\inc\misc.h)(0x5B25AA91)
 I (extigroup.h)(0x5B25AA90)
 I (delay.h)(0x5B25AA90)
 I (pwm.h)(0x5B1CDAA2)
-F (.\key.c)(0x5B25AA8F)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\Lib\inc -I ..\User -I ..\Startup -I ..\Usart-IE:\waibao\pwm\User\RTE-IE:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-IE:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\key.o --omf_browse ..\obj\key.crf --depend ..\obj\key.d)
+F (.\key.c)(0x5B260744)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\Lib\inc -I ..\User -I ..\Startup -I ..\Usart-IE:\waibao\pwm\User\RTE-IE:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-IE:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\key.o --omf_browse ..\obj\key.crf --depend ..\obj\key.d)
 I (..\Lib\inc\stm32f10x_gpio.h)(0x5B25AA90)
 I (..\User\stm32f10x.h)(0x5B25AA8F)
 I (..\Startup\core_cm3.h)(0x5B25AA90)
